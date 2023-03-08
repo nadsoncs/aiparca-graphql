@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "aiparca",
+    "slug": "aiparca",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
