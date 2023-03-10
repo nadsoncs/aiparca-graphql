@@ -1,0 +1,22 @@
+schema:
+  - "http://api.sacamais.com.br/":
+      headers:
+        {
+          Authorization: "Bearer [eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZHVjYW5kbzAiLCJleHAiOjE2NzUyMzcxNjcsImZ1bGxuYW1lIjoiTHVjYXMgRGFudGFzIE1hY2hhZG8ifQ.nO4zugdAPVcdakG2Duz5R7IMFCowEaMR4Mam3C5Tez4]",
+        }
+#schema: http://132.226.160.96/beta:
+#  headers: {Authorization: "Bearer ["eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZHVjYW5kbzAiLCJleHAiOjE2NzUyMzcxNjcsImZ1bGxuYW1lIjoiTHVjYXMgRGFudGFzIE1hY2hhZG8ifQ.nO4zugdAPVcdakG2Duz5R7IMFCowEaMR4Mam3C5Tez4"]"}
+
+documents: "./src/graphql/**/*.graphql"
+
+generates:
+  ./src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      withHooks: true
+      withHOC: false
+      withComponents: false

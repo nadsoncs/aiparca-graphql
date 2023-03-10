@@ -1,0 +1,7 @@
+mutation CreateConversation {
+  startConversation {
+    conversationID
+    startDate
+    isNew
+  }
+}

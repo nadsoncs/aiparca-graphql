@@ -1,0 +1,6 @@
+mutation EndConversation($talk: ID!) {
+  endConversation(input: { conversationID: $talk }) {
+    conversationID
+    endDate
+  }
+}

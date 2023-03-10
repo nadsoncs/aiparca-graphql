@@ -1,0 +1,11 @@
+query GetMessages($id: ID) {
+  getMessages(input: { conversationID: $id }) {
+    id
+    datetime
+    content
+    conversationID
+    senderID
+    senderName
+    self
+  }
+}

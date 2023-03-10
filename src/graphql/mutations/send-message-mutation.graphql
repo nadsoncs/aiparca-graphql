@@ -1,0 +1,10 @@
+mutation CreateMessage($talk: ID!, $message: String!) {
+  sendMessage(input: { conversationID: $talk, message: $message }) {
+    id
+    conversationID
+    responseDatetime
+    responseContent
+    respondentID
+    respondentName
+  }
+}
