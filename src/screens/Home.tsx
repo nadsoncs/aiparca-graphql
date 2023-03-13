@@ -29,9 +29,6 @@ interface Conversation {
   endDate?: Date;
 }
 export function Home() {
-  const { error, data, loading } = useGetConversationsQuery();
-  console.log(data);
-  console.log(error)
   const [isLoading, setIsLoading] = useState(false);
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
@@ -72,14 +69,15 @@ export function Home() {
   async function setAllTalksWithClosed() {}
 
   async function fetchConversations() {
-    //const conversationsList = await data.();
+    const { error, data, loading } = await useGetConversationsQuery();
+    console.log(data);
+    console.log(error)
   }
 
-  if (loading) {
-    return (
-      <Loading/>
-    )
-  }
+  useEffect(() => {
+    fetchConversations()
+  }, [])
+
   return(
     <VStack h="full" pb={6} bg="primary.100" >
       <VStack
